@@ -27,6 +27,7 @@ ARCHITECTURE behavior OF sumator_tb IS
  	--Outputs
    signal s : std_logic;
    signal c_out : std_logic;
+	
 	signal val : STD_LOGIC_VECTOR(2 downto 0);
  
 BEGIN
