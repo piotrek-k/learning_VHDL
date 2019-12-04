@@ -5,17 +5,17 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 USE ieee.numeric_std.ALL;
  
-ENTITY wykrywanie_liczb_case_tb IS
-END wykrywanie_liczb_case_tb;
+ENTITY detektor_tb IS
+END detektor_tb;
  
-ARCHITECTURE behavior OF wykrywanie_liczb_case_tb IS 
+ARCHITECTURE behavior OF detektor_tb IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT wykrywanie_liczb_case
+    COMPONENT detektor
     PORT(
          X : IN  std_logic_vector(3 downto 0);
-         Y : OUT  std_logic
+         Y : OUT  std_logic_vector(5 downto 0)
         );
     END COMPONENT;
     
@@ -24,17 +24,18 @@ ARCHITECTURE behavior OF wykrywanie_liczb_case_tb IS
    signal X : std_logic_vector(3 downto 0) := (others => '0');
 
  	--Outputs
-   signal Y : std_logic;
+   signal Y : std_logic_vector(5 downto 0);
  
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: wykrywanie_liczb_case PORT MAP (
+   uut: detektor PORT MAP (
           X => X,
           Y => Y
         );
-
-	tb: process
+ 
+   -- Stimulus process
+   tb: process
 	begin
 		for i in 0 to 15 loop
 			X <= std_logic_vector(to_unsigned(i,4));
