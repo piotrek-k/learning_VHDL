@@ -47,6 +47,20 @@ BEGIN
 		DataRdy <= '0';
 		wait for 50ns;
 		
+		DataIn <= x"F0";
+		DataRdy <= '1';
+		wait for 100 ns;
+		
+		DataRdy <= '0';
+		wait for 50ns;
+		
+		DataIn <= x"1C";
+		DataRdy <= '1';
+		wait for 100 ns;
+		
+		DataRdy <= '0';
+		wait for 50ns;
+		
 		DataIn <= x"4D";
 		DataRdy <= '1';
 		wait for 100 ns;
